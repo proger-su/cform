@@ -14,11 +14,11 @@ jQuery(document).ready(function ($) {
 							data: $(form).serialize(),
 							timeout: 3000,
 							success: function () {
+								$(form).trigger('reset');
 								var $message = $('<p style="color: green">Sussess</p>').appendTo($(form));
 								setTimeout(function () {
-									$(form).trigger('reset');
 									$message.remove();
-								}, 1500);
+								}, 2000);
 							},
 							error: function () {
 								alert('Failed');
